@@ -1,18 +1,9 @@
-import torch
 import torch.nn as nn
 from torch.nn import init
-import torch.optim as optim
-import torch.utils.data as Data
-
-import numpy as np
 
 from matplotlib import pyplot as plt
-import random
-import sys
-from time import time
 
-import pandas as pd
-from utils.dataloader import *
+from dataloader import *
 
 # the structure of dataset points
 # 6 absolute joint values
@@ -23,7 +14,7 @@ from utils.dataloader import *
 # pose of the distal sensor attached to the most inner tube
 # 6 + 6 + 7 + 7 + 7 + 7
 
-df = pd.read_csv("./dataset/CRL-Dataset-CTCR-Pose.csv", header=None)
+df = pd.read_csv("../dataset/CRL-Dataset-CTCR-Pose.csv", header=None)
 dt = df.values
 
 train_data = np.zeros((dt.shape[0], 18))
